@@ -13,13 +13,10 @@ import br.com.scarlet.ui.custom.panel.SudokuSector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import static br.com.scarlet.service.EventEnum.CLEAR_SPACE;
-import static javax.swing.JOptionPane.QUESTION_MESSAGE;
-import static javax.swing.JOptionPane.showConfirmDialog;
-import static javax.swing.JOptionPane.YES_NO_OPTION;
+import static javax.swing.JOptionPane.*;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -77,14 +74,14 @@ public class MainScreen {
 
     private JPanel generateSection(final List<Space> spaces) {
         List<NumberText> fields = new ArrayList<>(spaces.stream().map(NumberText::new).toList());
-
+        fields.forEach(t -> notifierService.subscribe(CLEAR_SPACE, t));
         return new SudokuSector(fields);
     }
 
     private void addFinishGameButton(JPanel mainPanel) {
         finishGameButton = new FinishGameButton(e -> {
             if (boardService.gameIsFinished()) {
-                JOptionPane.showMessageDialog(
+                showMessageDialog(
                         null,
                         "PARABÉNS! \uD83C\uDF89 \uD83C\uDF89 Você completou o jogo!"
                 );
@@ -92,7 +89,7 @@ public class MainScreen {
                 checkGameStatusButton.setEnabled(false);
                 finishGameButton.setEnabled(false);
             } else {
-                JOptionPane.showMessageDialog(
+                showMessageDialog(
                         null,
                         "Seu jogo tem alguma inconsistência, ajuste e tente novamente"
                 );
@@ -111,7 +108,7 @@ public class MainScreen {
                 case COMPLETE -> "O jogo está completo.";
             };
             message += hasAnyErrors ? " e contém erros." : " e não contém erros.";
-            JOptionPane.showMessageDialog(null, message);
+            showMessageDialog(null, message);
         });
         mainPanel.add(checkGameStatusButton);
     }
@@ -125,7 +122,7 @@ public class MainScreen {
                     YES_NO_OPTION,
                     QUESTION_MESSAGE
             );
-            if (dialogResult == 0) {
+            if (dialogResult == 0) {dialogResult:
                 boardService.reset();
                 notifierService.notify(CLEAR_SPACE);
             }
