@@ -12,6 +12,7 @@ import java.awt.*;
             this.setLocationRelativeTo(null);
             this.setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.setLocation(null);
+            this.setResizable(false);
             this.add(mainPanel);
 
 

@@ -9,32 +9,33 @@ import java.util.List;
 import br.com.scarlet.model.Space;
 
 public class BoardService {
+
     private final static int BOARD_LIMIT = 9;
 
-    private static Board board = null;
+    private final Board board;
 
     public BoardService(final Map<String, String> gameConfig) {
-        board = new Board(initBoard(gameConfig));
+        this.board = new Board(initBoard(gameConfig));
     }
 
     public List<List<Space>> getSpaces() {
-        return board.getSpaces();
+        return this.board.getSpaces();
     }
 
     public void reset() {
-        board.reset();
+        this.board.reset();
     }
 
-    public static boolean hasErrors() {
-        return board.hasErrors();
+    public boolean hasAnyErrors() {
+        return this.board.hasAnyErrors();
     }
 
-    public static GameStatusEnum getStatus() {
-        return board.getStatus();
+    public GameStatusEnum getStatus() {
+        return this.board.getStatus();
     }
 
     public boolean gameIsFinished() {
-        return board.gameIsFinished();
+        return this.board.gameIsFinished();
     }
 
     private List<List<Space>> initBoard(final Map<String, String> gameConfig) {
