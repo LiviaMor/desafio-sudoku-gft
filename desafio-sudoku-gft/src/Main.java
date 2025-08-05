@@ -1,5 +1,5 @@
-import model.Board;
-import model.Space;
+import br.com.scarlet.model.Board;
+import br.com.scarlet.model.Space;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static util.BoardTemplate.BOARD_TEMPLATE;
+import static br.com.scarlet.util.BoardTemplate.BOARD_TEMPLATE;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 import static java.util.stream.Collectors.toMap;

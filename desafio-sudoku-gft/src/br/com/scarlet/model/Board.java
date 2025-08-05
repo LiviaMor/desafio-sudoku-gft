@@ -1,11 +1,11 @@
-package model;
+package br.com.scarlet.model;
 
 import java.util.Collection;
 import java.util.List;
 
-import static model.GameStatusEnum.COMPLETE;
-import static model.GameStatusEnum.INCOMPLETE;
-import static model.GameStatusEnum.NON_STARTED;
+import static br.com.scarlet.model.GameStatusEnum.COMPLETE;
+import static br.com.scarlet.model.GameStatusEnum.INCOMPLETE;
+import static br.com.scarlet.model.GameStatusEnum.NON_STARTED;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 

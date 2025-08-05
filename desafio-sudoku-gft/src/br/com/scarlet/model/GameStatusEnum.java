@@ -1,4 +1,4 @@
-package model;
+package br.com.scarlet.model;
 
 public enum GameStatusEnum {
 

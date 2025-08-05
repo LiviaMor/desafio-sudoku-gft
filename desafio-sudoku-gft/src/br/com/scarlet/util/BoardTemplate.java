@@ -1,4 +1,4 @@
-package util;
+package br.com.scarlet.util;
 
 public final class BoardTemplate {
 
