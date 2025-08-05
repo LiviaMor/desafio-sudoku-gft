@@ -28,7 +28,7 @@ Este projeto é uma excelente oportunidade para reforçar conceitos de:
 ## Aprendizados
 Durante o desenvolvimento deste projeto, foram reforçados conceitos como:
 
-Encapsulamento e abstração
-Validação de regras de negócio
-Manipulação de eventos na interface gráfica
-Boas práticas de versionamento com Git
+Encapsulamento e abstração,
+Validação de regras de negócio,
+Manipulação de eventos na interface gráfica e
+Boas práticas de versionamento com Git.
